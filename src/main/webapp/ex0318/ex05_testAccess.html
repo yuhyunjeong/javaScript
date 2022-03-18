@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{width: 200px; height: 150px; border: 1px skyblue solid;
+		overflow: auto;
+	}
+</style>
+<script type="text/javascript">
+	function moveText(){
+		/*window.document.폼이름.input_text의 이름.속성 또는
+			window.document.폼이름.input_text의 이름.함수()
+		*/
+		
+		let inputEle = window.document.f.input; //window는 생략 가능하다.
+		//inputEle.value = "나오니?";
+		//inputEle.focus(); //커서 놓기
+		
+		if(inputEle.value==""){
+			alert("입력값을 넣어주세요.");
+			inputEle.focus();
+			return; //함수를 빠져나가라.
+		}
+		
+		// input 박스의 값을 읽어와서 output에 넣기
+		document.f.output.value = inputEle.value;
+		
+		//div영역에 input데이터를 누적하기
+		document.getElementById("result").innerHTML += inputEle.value+"<br>";
+		
+		//input박스를 초기화
+		inputEle.value="";
+		
+		//input박스에 커서 놓기
+		inputEle.focus();
+		
+		
+	}
+</script>
+</head>
+<body>
+<form name="f">
+	입력 : <input type="text" name="input"/> <br>
+	출력 : <input type="text" name="output"/> <p>
+	<input type="button" value="옮기기" onclick="moveText()">
+</form>
+
+<hr>
+<div id="result"></div>
+</body>
+</html>

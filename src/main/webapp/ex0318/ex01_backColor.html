@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	//색상 5개를 배열로 준비한다.
+	let arr = ["red","blue","orange","pink","skyblue"];
+	
+	function backColor(){
+		//alert(1)
+		document.getElementById("result").innerHTML="<h3>잘되나요?</h3>";
+		
+		//난수를 준비된 색상의 범위(개수)내에서 발생시킨다.
+		let no = Math.floor((Math.random()*arr.length)); // 0 ~ (arr.length-1)
+		console.log("no = " + no);
+		
+		//발생한 난수의 숫자에 해당하는 색상으로 바탕색을 변경한다.
+		//document.body.style.backgroundColor=색상
+		document.body.style.backgroundColor=arr[no];
+		
+	}
+</script>
+</head>
+
+<body onload="backColor()">
+<div id="result"></div>
+
+</body>
+</html>

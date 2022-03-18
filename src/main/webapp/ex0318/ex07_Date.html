@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Date 객체</h1>
+<script type="text/javascript">
+	let today = new Date(); //현재날짜와 시간 설정
+	//let today = new Date(2022, 5, 20); ; //2022년 6월 20일
+	//let today = new Date(2021, 3, 20, 10, 3, 5); //2021년 4월 20일 10시 3분 5초
+	
+	document.write("<h3>");
+	document.write(`today = ${today}<br>`);
+	document.write(`today.toLocaleString() = ${today.toLocaleString()}<hr>`);
+	
+	document.write(`today.getFullYear() = ${today.getFullYear()}<br>`);
+	
+	//0=1월, 1=2월 ..............11=12월
+	document.write(`today.getMonth() = ${today.getMonth()}<br>`);
+	document.write(`today.getDate() = ${today.getDate()}<br>`);
+	
+	//0=일, 1=월, ...........5=금 6=토
+	document.write(`today.getDay() = ${today.getDay()}<br>`);
+	// 위 getDay()를 요일 변환!
+	let day=["일","월","화","수","목","금","토"];
+	document.write(`today.getDay() = ${day[today.getDay()]}<br>`);
+	
+	document.write(`today.getHours() = ${today.getHours()}<br>`);
+	document.write(`today.getSeconds() = ${today.getSeconds()}<br>`);
+	document.write(`today.getMinutes() = ${today.getMinutes()}<hr>`);
+	
+	//날짜 변경해보자.
+	today.setFullYear(2024);
+	today.setMonth(7);//8월
+	document.write(`today.toLocaleString() = ${today.toLocaleString()}<hr>`);
+	
+	document.write("</h3>");
+</script>
+</body>
+</html>

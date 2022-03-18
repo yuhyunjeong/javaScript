@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>연산자의 종류</h1>
+<script type="text/javascript">
+	//변수 선언
+	let i=10; //number
+	let j="10"; //String
+	document.write("<h3>");
+	//템플릿문자열 문법 ES6에서 추가 홑따옴표 `문자열` - 키보드 ~ 에 있는 키
+	//document.write("i = " + i  + " , type = " + ( typeof i) + "<br>");
+	document.write(`i = ${i} , type = ${typeof i}<br>`);
+	document.write(`j = ${j} , type = ${typeof j}<hr>`);
+	
+	//두 변수를 비교해보자.
+	document.write(`i==j 의 결과 ${i==j}<br>`); //==는 값을 비교한다.
+	document.write(`i===j 의 결과 ${i===j}<hr>`); //===는 값과 타입을 비교한다.
+	
+	//형변환( parseInt() vs Number())
+	
+	let data="a100";
+	document.write(`data = ${data} , type = ${typeof data}<br>`);
+	document.write(`parseInt(data) = ${parseInt(data)} , type = ${typeof parseInt(data)}<br>`); //NaN은 Not a Number이다.
+	document.write(`Number(data) = ${Number(data)} , type = ${typeof Number(data)}<p>`);
+	
+	data="10b0a";
+	document.write(`data = ${data} , type = ${typeof data}<br>`);
+	
+	// parseInt : 문자열안에 첫번째가 숫자로 시작하면 그 숫자까지만 추출해서 number로 변환해준다
+	document.write(`parseInt(data) = ${parseInt(data)} , type = ${typeof parseInt(data)}<br>`); 
+	document.write(`Number(data) = ${Number(data)} , type = ${typeof Number(data)}<br>`);
+	
+	//산술연산자.
+	let a=10 , b="3";
+	document.write(`a + b = ${a+b}<br>`);
+	document.write(`a + b = ${a+parseInt(b)}<br>`);
+	document.write(`a + b = ${a-b}<br>`);
+	document.write(`a + b = ${a*b}<br>`);
+	document.write(`a + b = ${a/b}<br>`);
+	document.write(`a + b = ${a%b}<hr>`);
+	
+	//대입연산자
+	document.write(`a+=b = ${a+=b}<br>`);
+	
+	document.write(`a=${a} , b= ${b}<br>`);
+	document.write(`a*=b = ${a*=b}<br>`);
+	document.write(`a-=b = ${a-=b}<hr>`);
+	
+	let avg = 50.5; //parseFloat()
+	document.write(`avg = ${avg} , type = ${typeof avg}<br>`);
+	
+	documet.write("</h3>");
+</script>
+</body>
+</html>

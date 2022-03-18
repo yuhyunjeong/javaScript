@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+	1. 이름을 입력받아 이름 출력(prompt이용) - 인수없음
+	
+	2. 색깔 입력받아서 바탕색 바꾸기(prompt이용) - 색상인수 있음
+		//document.bgColor='red';
+	
+	3. 이름과 태어난 년도를 입력받아 alert() 에 이름과 나이 출력
+		-이름과 년도 인수 받음
+	
+	4. confirm을 이용해서 성별 구별 
+		- 성별 리턴
+		
+	5. onClick="함수이름()" 이용해서 바탕색 바꾸기
+		-두번째 함수 이용 
+
+*/
+	function printName(){
+			let name = prompt("이름 입력","유현");
+			alert(`이름은 ${name}이군요.`);
+		}	
+	
+	function backColorChange(color){
+		//document.write("색상바꿔볼까?");
+		//바탕색을 변경하자.
+		//document.bgColor=color;
+		document.body.style.backgroundColor=color;
+	}
+	
+	function printNameAge(name, year){
+		let age = new Date().getFullYear() -year;
+		
+		alert(`${name}님 나이는 ${age}살 입니다.`);
+	}
+	
+	let genderCheck = function(){
+		let result = confirm("여자니?") ? "여자" : "남자";
+		return result;
+	}
+
+	//함수호출
+	//printName();
+	//backColorChange("blue");
+
+</script>
+</head>
+<body>
+<h2 onClick="let c = prompt('원하는색상?','pink') ; backColorChange(c)"> 바탕색 변경하기1 </h2>
+<h2 onClick="backColorChange(prompt('원하는색상?','pink'))"> 바탕색 변경하기2 </h2>
+
+<script type="text/javascript">
+	/*let co = prompt("원하는 바탕색은?","skyblue");
+	backColorChange(co);*/
+	//backColorChange(prompt("원하는 바탕색은?", "skyblue"));
+	
+	//printNameAge(prompt("이름 뭐야?"), prompt("몇년생?"));
+	
+	let re = genderCheck();
+	document.write(`<h3>당신의 성별은 ${re}입니다.</h3>`);
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	input[name=text] {width: 400px; height: 30px; font-size: 15px; }
+	input[value=시작] {width: 50px; height: 30px; font-size: 15px;
+	background-color: skyblue; color: white;}
+</style>
+<script type="text/javascript">
+	//문자열을 배열에 저장한다.
+	let data = ["오","늘 ","점","심 ","뭐","먹","지","?"];
+	
+	let i=0;
+	let st;
+	function moveText(){
+		//1초마다 data배열의 문자를 text에 넣는다.
+		document.f.text.value += data[i++];
+		console.log(i);
+		//끝이되면 그만한다.
+		if(i==data.length){
+			
+			i=0;
+			clearInterval(st);
+		}
+		
+	}
+	function textStart(){
+		if(i == 0){
+			document.f.text.value='';
+			st=setInterval('moveText()', 500)
+		}else{
+			alert("이미 실행중입니다^^");
+		}
+	}
+</script>
+</head>
+<body>
+<form name="f">
+	<input type="text" name="text">
+	<input type="button" value="시작" onclick="textStart()">
+</form>
+</body>
+</html>

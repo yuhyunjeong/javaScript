@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+ table{
+ 	width: 500px; 
+	height: 100px;
+	border: 3px double red;}
+ th,td{
+ 	border: 1px solid gray;
+ 	text-align: center;
+ }
+ table tr:nth-child(1) {
+	background-color: skyblue;
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+	//prompt를 4개 띄운다. (이름, 국어, 영어, 수학)
+	//prompt에서는 숫자도 문자취급된다.
+	let name = prompt("이름은?","장희정");
+	let kor= parseInt(prompt("국어점수는?",80));
+	let eng=parseInt(prompt("영어점수는?",90));
+	let math=parseInt(prompt("수학점수는?",100));
+	
+	//총점을 구한다.
+	let sum= kor+eng+math;
+
+	//평균을 구한다.
+	let avg = sum/3;
+	
+	//등급을 구한다.(100~90 수, 80~89 우, 70~79 미, 60~69 양, 60 미만은 가)
+	let grade="가";
+	if(avg>=90){
+		grade="수";
+	}
+	else if(avg>=80){
+		grade="우";
+	}
+	else if(avg>=70){
+		grade="미";
+	}
+	else if(avg>=60){
+		grade="양";
+	}
+	
+	
+	
+	/*테이블에 예쁘게 출력한다.
+			1) javaScript에서 모두 출력하는 방법
+			2) 테이블은 html에 만들고 값만 js로 이용
+	*/
+	//테이블 디자인을 <style></style>을 이용해서 작성한다.
+	
+	//1) javaScript에서 모두 출력하는 방법
+	document.write(`<table>`);
+	document.write(`<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>총점</th><th>평균</th><th>등급</th></tr>`);
+	document.write(`<tr><td>${name}</td><td>${kor}</td><td>${eng}</td><td>${math}</td><td>${sum}</td><td>${avg}</td><td>${grade}</td></tr>`);
+	document.write(`</table>`);
+</script>
+
+<hr>
+<!--  2) 테이블은 html에 만들고 값만 js로 이용 -->
+<table>
+	<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>총점</th><th>평균</th><th>등급</th></tr>
+	<tr>
+		<td><script>document.write(name)</script></td>
+		<td><script>document.write(kor)</script></td>
+		<td><script>document.write(eng)</script></td>
+		<td><script>document.write(math)</script></td>
+		<td><script>document.write(sum)</script></td>
+		<td><script>document.write(Math.round(avg))</script></td>
+		<td><script>document.write(grade)</script></td>
+	</tr>
+</table>
+</body>
+</html>

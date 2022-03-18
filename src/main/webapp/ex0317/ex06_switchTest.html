@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+	#result{
+		width: 300px;
+		height: 100px;
+		border: 1px red solid;
+	 }
+</style>
+
+<script type="text/javascript">
+	function cal(){
+		let no1 = prompt("첫번째 수 ?",0);
+		let no2 = prompt("두번째 수 ?",0);
+		let operator = prompt("연산기호는(+,-,*,/) ?",0);
+		let re;
+		
+		if(isNaN(no1)|| isNaN(no2)){
+			alert("숫자만 입력해주세요.");
+			confirm("다시할래요?") ? cal() : alert("다음에 이용해주세요.");
+		}else{
+			let divEle = document.getElementById("result");
+			switch(operator){
+			case "+":
+				re = Number(no1)+Number(no2); //parseInt를 해버리면 100a같은 경우도 가능해진다.
+				divEle.innerHTML=`<h2>${no1}+${no2}=${re}</h2>`;
+				//divEle.innerText=`${no1}+${no1}=${Number(no1)+Number(no2)}`;
+				break;
+			
+			case "-":
+				re = no1-no2;
+				divEle.innerHTML=`<h2>${no1}-${no2}=${re}</h2>`;
+				break;
+			
+			case "*":
+				re = no1*no2;
+				divEle.innerHTML=`<h2>${no1}*${no2}=${re}</h2>`;
+				break;
+			
+			case "/":
+				re = no1/no2;
+				divEle.innerHTML=`<h2>${no1}/${no2}=${re}</h2>`;
+				break;
+				
+			default: 
+				alert("연산기호가 틀렸습니다.");
+				confirm("다시할래요?") ? cal() : alert("잘가~");
+			}
+		}
+		
+		//document.write(`${no1}+${no2}`)
+		//마크업되어있는 element 즉 요소를 찾는 방법 - id로 찾기!!
+		//let ele = document.getElementById("아이디");
+		//let divEle = document.getElementById("result");
+		//alert(divEle);
+		
+		//divEle.innerHTML=`<h2>${re}</h2>`;
+		/*
+			div영역에서 content를 넣는 방법
+			1) divEle.innerText="문자열";
+			2) divEle.innerHTML="<h2>문자열</h2>"
+		*/
+		//divEle.innerText="<h3>재미있다.</h3>";
+		//divEle.innerHTML="<h3>재미있다.</h3>";
+		
+		//숫자유무 체크하기 - isNaN() - is Not a Number? 결과는 boolean
+		/*console.log(isNaN(10));
+		console.log(isNaN("10"));
+		
+		console.log(isNaN("a10"));
+		console.log(isNaN("10a"));
+		console.log(isNaN("1a0"));*/
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+<form>
+ <input type="button" value="연산하기" onclick="cal()">
+</form>
+<hr>
+<div id="result"></div>
+
+</body>
+</html>

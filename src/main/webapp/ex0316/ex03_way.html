@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- src 속성으로 적용하면 이 스크립트 내부에 문장은 무시된다! -->
+<script type="text/javascript" src="../js/basic.js">
+	alert("난 출력되나요???");
+</script>
+<script type="text/javascript">
+	alert("이렇게 하면 나와요...")
+</script>
+
+</head>
+<body>
+<h1>JavaScript 적용하는 방법</h1>
+<!-- 
+	1) 태그에 직접 적용하기 - inline
+	2) <script> </script> 영역을 만들어서 적용하기 - internal
+	3) 외부의 ~.js 만들어서 적용하기 - external
+ -->
+ 
+ <!-- 자바스크립트 이벤트를 등록할때 onXxx로 시작한다. - Xxx는 이벤트 종류 -->
+ <h3 onmouseover="test1(this)" onmouseout="test2(this)">마우스를 올려봐</h3>
+
+<h2>나도 적용하고싶다.!</h2>
+
+<script type="text/javascript">
+	document.write("<h3>나는 어디에 출력되나요</h3>");
+	
+
+	
+</script>
+</body>
+</html>

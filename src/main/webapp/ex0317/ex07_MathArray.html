@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	document.write("<h3>");
+	document.write("Math객체 알아보자 <p>");
+	//난수 발생
+	let nansu = Math.random(); // 0.0 ~ 0.9999
+	document.write(`nansu=${nansu}<br>`);
+	
+	// 1~10사이 난수
+	let no = (nansu*10) + 1;
+	document.write(`no=${no}<br>`);
+	document.write(`Math.floor(no)=${Math.floor(no)}<br>`);
+	
+	document.write("</h3>");
+	document.write("<hr><h3>");
+	document.write("Array객체 알아보자<p>");
+	let arr1 = new Array(5); //5개 공간의 배열 생성
+	let arr2 = new Array(1,3,"희정"); //3개의 공간 배열에 값 초기화
+	let arr3 = [2,4,6,true,3.14,"안녕"];
+	let arr4 = [[1,3,5],[2,4],["A","B","C","D"]];
+	
+	document.write(`arr1 = ${arr1}<p>`);
+	document.write(`arr2 = ${arr2}<p>`);
+	document.write(`arr3 = ${arr3}<p>`);
+	document.write(`arr4 = ${arr4}<p>`);
+	
+	//배열방 값변경해보자
+	arr1[2] = 100;
+	arr2[5] = "오늘도수고하셨어요.";
+	arr2.push("어디에 들어가?"); // 끝에 추가된다.
+	
+	document.write("값 변경 후 <p>");
+	printArray(arr1);
+	document.write("<hr>");
+	printArray(arr2);
+	
+	
+	//배열 출력하는 함수
+	function printArray( objArr ){
+		document.write(`배열의 길이는 ${objArr.length}<br>`);
+		
+		for(let i = 0; i < objArr.length ; i++){
+			document.write(`objArr[${i}] = ${objArr[i]}<br>`);
+		}
+		document.write("-----------------------------------<br>");
+		for( let i in objArr){ // i는 배열에 실제로 들어있는 index를 구한다.
+			document.write(`objArr[${ i }] = ${objArr[i]}<br>`);
+		}
+	}
+	
+	document.write("</h3>");
+</script>
+</body>
+</html>

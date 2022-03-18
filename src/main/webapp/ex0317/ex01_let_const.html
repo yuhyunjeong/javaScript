@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>변수선언방법 (let와 const  : ES6 추가)</h1>
+<script type="text/javascript">
+	let a;
+	let b=10;
+	let c="희정";
+	d=3.14;  //var키워드 생략된 경우!
+	
+	//브라우저에 출력하기
+	document.write("<h3>");
+	document.write("a = " + a + " , " + (typeof a) + "<br>");
+	document.write("b = " + b + " , " + (typeof b) + "<br>");
+	document.write("c = " + c + " , " + (typeof c) + "<br>");
+	document.write("d = " + d + " , " + (typeof d) + "<br>");
+	
+	document.write("</h3>");
+	
+	//값변경해보자.
+	a=new String("재밌다.");
+	b=new Array(3,4,5,6);
+	c=100;
+	d=true;
+	
+	document.write("<h3>값변경 후---------<br>");
+	document.write("a = " + a + " , " + (typeof a) + "<br>");
+	document.write("b = " + b + " , " + (typeof b) + "<br>");
+	document.write("c = " + c + " , " + (typeof c) + "<br>");
+	document.write("d = " + d + " , " + (typeof d) + "<br>");
+	
+	document.write("</h3>");
+	
+	//동일한 이름 변수를 선언해보자.
+	/*let a=200; //이미 선언된 변수이므로 또 선언 안된다.
+	
+	document.write("<h3>동일한 이름 변수---------<br>");
+	document.write("a = " + a + " , " + (typeof a) + "<br>");
+	document,write("</h3>");*/
+	
+	//선언전에 사용해보자 - 선언 전에 사용할 수 없다.
+	/*document.write("<h3>동일한 이름 변수---------<br>");
+	document.write("addr = " + addr + " , " + (typeof addr) + "<br>");
+	document,write("</h3>");
+	
+	let addr="서울";*/
+	
+	//js는 함수안에 선언된 변수(var)의 scope은 블럭당이 아니라 함수당 scope 결정된다.
+	function test(){
+		document.write("<hr><h3> test()함수안에서 변수 호출<br>");
+		//document.write("1. message = " + message + " , " + (typeof message) + "<br>");
+		document.write("</h3>");
+		
+		{
+			//var message="어렵다..";
+			let message="어렵다..";
+			document.write("2. message = " + message + " , " + (typeof message) + "<br>");
+			
+		}
+		//document.write("3. message = " + message + " , " + (typeof message) + "<br>");
+	}
+	
+	test();//함수호출
+		
+	///////////////////////////////////////////////////////////////////////////////////////
+	//상수선언! - 고정값 값변경불가, 반드시 초기화 필수!
+	const phone="1111";
+	document.write("<hr><h3> 상수 사용해보자 <br>");
+	document.write("phone = " + phone + " , " + (typeof phone) + "<br>");
+	document.write("</h3>");
+	
+	//상수 값변경해보자. - 값변경 불가.
+	//phone="2222";
+	
+</script>
+</body>
+</html>
